@@ -22,17 +22,12 @@ app.use("/api/orders", orderRoutes_1.default);
 const MONGODB_URI = process.env.MONGODB_URI || "";
 mongoose_1.default
     .connect(MONGODB_URI)
-    .then(() => {
-    console.log("Connected to MongoDB");
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((err) => console.error("MongoDB connection error:", err));
+if (process.env.NODE_ENV !== "production") {
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
     });
-})
-    .catch((err) => {
-    console.error("MongoDB connection error:", err);
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT} (without database)`);
-    });
-});
+}
 exports.default = app;
 //# sourceMappingURL=index.js.map

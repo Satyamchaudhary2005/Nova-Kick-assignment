@@ -40,11 +40,9 @@ export interface IProduct extends Document {
     isTrending: boolean;
     createdAt: string;
 }
-export declare const Product: mongoose.Model<IProduct, {}, {}, {}, Document<unknown, {}, IProduct, {}, mongoose.DefaultSchemaOptions> & IProduct & Required<{
+export declare const Product: mongoose.Model<IProduct, {}, {}, {}, mongoose.Document<unknown, {}, IProduct, {}, {}> & IProduct & Required<{
     _id: mongoose.Types.ObjectId;
 }> & {
     __v: number;
-} & {
-    id: string;
-}, any, IProduct>;
+}, any>;
 //# sourceMappingURL=Product.d.ts.map
