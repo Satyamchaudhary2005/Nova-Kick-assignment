@@ -42,7 +42,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <div className="relative aspect-square overflow-hidden bg-gray-50">
             {!imgError ? (
               <Image
-                src={product.images[0].url}
+                src={`${product.images[0].url}?w=600&q=80&fit=crop`}
                 alt={product.name}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -61,7 +61,7 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
 
             {isHovered && product.images[1] && !imgError && (
               <Image
-                src={product.images[1].url}
+                src={`${product.images[1].url}?w=600&q=80&fit=crop`}
                 alt={product.name}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
